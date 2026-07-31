@@ -6,3 +6,5 @@
 
 *.code-workspace
 dev_marker.lua
+
+*.zip
