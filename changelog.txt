@@ -1,0 +1,18 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2026-07-31
+  Features:
+    - Added a per-player shortcut behavior setting.
+    - Added the default run-once mode, which performs one immediate transfer pass per shortcut click.
+    - Added optional continuous mode, which runs immediately when activated and then every 251 ticks.
+  Changes:
+    - Warning checks remain active regardless of the configured shortcut behavior.
+
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2026-07-31
+  Features:
+    - Added per-player fuel and spent-fuel management for all personal burner equipment.
+    - Added fair fuel distribution across multiple equipment burners.
+    - Added always-active alerts for missing fuel and blocked spent-fuel output.
+    - Added conditional compatibility that disables and hides the obsolete pY equipment manager.

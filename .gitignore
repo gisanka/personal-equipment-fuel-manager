@@ -1,0 +1,8 @@
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+.luarc.json
+
+*.code-workspace
+dev_marker.lua

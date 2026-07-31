@@ -1,0 +1,13 @@
+{
+  "name": "personal-equipment-fuel-manager",
+  "version": "1.1.0",
+  "title": "Personal Equipment Fuel Manager",
+  "author": "Maeximus",
+  "factorio_version": "2.1",
+  "dependencies": [
+    "base >= 2.1.12",
+    "(?) pycoalprocessing",
+    "(?) pyindustry"
+  ],
+  "description": "Manages personal burner-equipment fuel management on demand, with optional continuous operation and always-active warnings for empty fuel or blocked spent-fuel output."
+}
