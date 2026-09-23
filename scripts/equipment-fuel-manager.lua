@@ -175,9 +175,9 @@ local function refuel_burners(managed_burners, player_inventory)
     local source_stack = player_inventory[inventory_slot_index]
 
     if source_stack and source_stack.valid_for_read then
-      local fuel_category = source_stack.prototype.fuel_category
+      local fuel_categories = source_stack.prototype.fuel_categories
 
-      if fuel_category then
+      if fuel_categories then
         local made_progress = true
 
         while source_stack.valid_for_read and #refillable_burners > 0 and made_progress do
@@ -194,12 +194,19 @@ local function refuel_burners(managed_burners, player_inventory)
 
             local burner_data = refillable_burners[next_burner_index]
 
-            if burner_data.fuel_inventory.is_full() then
+            if not burner_data or burner_data.fuel_inventory.is_full() then
               remove_burner_at_index(refillable_burners, next_burner_index)
             else
               burners_checked = burners_checked + 1
+              
+              local accepts_fuel = false
+              for _, fuel_category in pairs(fuel_categories) do
+                if accepts_fuel_category(burner_data, fuel_category) then
+                  accepts_fuel = true
+                end
+              end
 
-              if accepts_fuel_category(burner_data, fuel_category) then
+              if accepts_fuel then
                 local available_count = source_stack.count
                 local inserted_count = burner_data.fuel_inventory.insert(source_stack)
 
